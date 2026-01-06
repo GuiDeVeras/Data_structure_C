@@ -134,3 +134,26 @@ int remove_list(List* li){
 	li->qtd--;
 	return 1;
 }
+
+int consult_pos_list(List* li, int pos, Student *st){
+	if(li == NULL || pos <= 0 || pos > li->qtt){
+		return 0;
+	}
+	*st = li->data[pos-1];
+	return 1;
+}
+
+int consult_pos_mat(List* li, int mat, Student *st){
+	if (li == NULL){
+		return 0;
+	}
+	int k, i = 0;
+	while (i < li->qtt && li->data[i].registration != reg){
+		i++;
+	}
+	if (i == li-> qtd){ //element not found
+		return 0;
+	}	
+	*St = li->data[i];
+	return 1;
+}

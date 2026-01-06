@@ -33,4 +33,8 @@ int main(){
 	int x = remove_list_beginning(li);
 
 	int x = remove_list(li, student_registration);
+
+	int x = consult_pos_list(li, position, &student_data);
+	
+	int consult_pos_mat(li, position, &student_data);
 }
