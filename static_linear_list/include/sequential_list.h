@@ -12,3 +12,21 @@ typedef struct list List;
 List* create_list();
 
 void free_list(List* li);
+
+int list_size(List* li);
+
+int list_full(List* li);
+
+int list_empty(List* li);
+
+int insert_list_final(List* li, Student st);
+
+int insert_list_beginning(List* li, Student st);
+
+int insert_list_ordered(List* li, Student st);
+
+int remove_list_final(List* li);
+
+int remove_list_beginning(List* li);
+
+int remove_list(List* li);
