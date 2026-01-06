@@ -5,6 +5,8 @@ struct student{
 	float n1,n2,n3;
 };
 
+typedef struct student Student;
+
 typedef struct list List;
 
 List* create_list();
