@@ -29,8 +29,10 @@ int remove_list_final(List* li);
 
 int remove_list_beginning(List* li);
 
-int remove_list(List* li);
+int remove_list(List* li, int reg);
 
 int consult_pos_list(List* li, int pos, Student *st);
 
-int consult_pos_mat(List* li, int mat, Student *st);
+int consult_pos_reg(List* li, int reg, Student *st);
+
+void print_list(List *li);

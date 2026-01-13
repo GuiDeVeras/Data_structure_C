@@ -1,10 +1,11 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "sequential_list.h"
 #define MAX 100
 
 struct list{
 	int qtt;
-	struct student data[MAX];
+	Student data[MAX];
 };
 
 List* create_list(){
@@ -29,7 +30,7 @@ int list_size(List* li){
 }
 
 int list_full(List* li){
-	if (li = NULL){
+	if (li == NULL){
 		return -1;
 	}
 	return (li->qtt == MAX);
@@ -76,11 +77,12 @@ int insert_list_ordered(List* li, Student st){
 	}
 	if (list_full(li)){
 		return 0;
+	}
 	int k, i = 0;
 	while (i < li->qtt && li->data[i].registration < st.registration){
 		i++;
 	}
-	for (k = li->qtd-1; k >= i; k--){
+	for (k = li->qtt-1; k >= i; k--){
 		li->data[k+1] = li->data[k];
 	}
 	li->data[0] = st;
@@ -92,7 +94,7 @@ int remove_list_final(List* li){
 	if (li == NULL){
 		return 0;
 	}
-	if (li->qtd == 0){
+	if (li->qtt == 0){
 		return 0;
 	}
 	li->qtt--;
@@ -103,35 +105,38 @@ int remove_list_beginning(List* li){
 	if (li == NULL){
 		return 0;
 	}
-	if (li->qtd == 0){
+	if (li->qtt == 0){
 		return 0;
 	}
 	int k = 0;
-	for (k = 0; k < li->qtd-1; k++){
-		li->dados[k] = li->dados[k+1];
+	for (k = 0; k < li->qtt-1; k++){
+		li->data[k] = li->data[k+1];
 	}
 	li -> qtt--;
 	return 1;
 }
 
-int remove_list(List* li){
+int remove_list(List* li, int reg){
 	if (li == NULL){
 		return 0;
 	}
-	if (li->qtd == 0){
+	if (li->qtt == 0){
 		return 0;
 	}
 	int k, i = 0;
 	while (i < li->qtt && li->data[i].registration != reg){
 		i++;
 	}
-	if (i == li-> qtd){ //element not found
+	if (i == li-> qtt){ //element not found
 		return 0;
 	}
-	for (k = i; k >= li->qtd-1; k++){
+	if (i == 1){
+		return 1;
+	}
+	for (k = i; k >= li->qtt-1; k--){
 		li->data[k] = li->data[k+1];
 	}
-	li->qtd--;
+	li->qtt--;
 	return 1;
 }
 
@@ -143,7 +148,7 @@ int consult_pos_list(List* li, int pos, Student *st){
 	return 1;
 }
 
-int consult_pos_mat(List* li, int mat, Student *st){
+int consult_pos_reg(List* li, int reg, Student *st){
 	if (li == NULL){
 		return 0;
 	}
@@ -151,9 +156,27 @@ int consult_pos_mat(List* li, int mat, Student *st){
 	while (i < li->qtt && li->data[i].registration != reg){
 		i++;
 	}
-	if (i == li-> qtd){ //element not found
+	if (i == li-> qtt){ //element not found
 		return 0;
-	}	
-	*St = li->data[i];
+	}
+	*st = li->data[i];
 	return 1;
+}
+
+void print_list(List *li) {
+    if (li == NULL || list_empty(li)) {
+        printf("The list is empty or doesn't exist.\n");
+        return;
+    }
+    printf("\n--- STUDENTS (%d) ---\n", li->qtt);
+    for (int i = 0; i < li->qtt; i++) {
+        printf("Position %d:\n", i + 1);
+        printf("  Registration: %d\n", li->data[i].registration);
+        printf("  Name: %s\n", li->data[i].name);
+        printf("  Grades: %.1f, %.1f, %.1f\n", 
+                li->data[i].n1, 
+                li->data[i].n2, 
+                li->data[i].n3);
+        printf("------------------\n");
+    }
 }
