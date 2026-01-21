@@ -178,6 +178,15 @@ int consult_elem(List* list, int value) {
 	if (node == NULL) {
 		return 0;
 	} else {
-		return 1;
+		return i;
 	}
+}
+
+void print_list(List *list) {
+    Elem *node = *list;
+    while (node != NULL) {
+        printf("%d -> ", node->value);
+        node = node->next;
+    }
+    printf("NULL\n");
 }

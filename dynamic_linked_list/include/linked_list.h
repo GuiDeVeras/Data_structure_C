@@ -1,6 +1,6 @@
 typedef struct element* List;
 
-List* creat_list();
+List* create_list();
 
 void free_list(List* list);
 
@@ -20,7 +20,9 @@ int remove_elem_end(List *list);
 
 int remove_elem(List *list, int value);
 
-int consult_elem_pos(List* list, int value);
+int consult_elem(List* list, int value);
+
+void print_list(List *list);
 
 //Tests
 
