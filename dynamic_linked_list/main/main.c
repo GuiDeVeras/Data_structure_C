@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "linked_list.h"
+#include <assert.h>
+
+int main(){
+
+	test_insert_elem_begin();
+	printf("test_insert_elem_begin worked!\n");
+
+	test_insert_elem_final();
+	printf("test_insert_elem_final worked!\n");
+	
+	test_insert_elem_ordered();
+	printf("test_insert_elem_ordered worked!\n");
+
+	test_remove_elem_end()	;
+	printf("test_remove_elem_end worked!\n");
+	
+	test_remove_elem();
+	printf("test_remove_elem worked!\n");
+	
+	test_consult_elem();
+	printf("test_consult_elem worked!\n");
+	
+	return 0;
+}
