@@ -3,15 +3,6 @@
 #include "linked_list.h"
 #include <assert.h>
 
-void print_list(List *list) {
-    Node *node = list->begin;
-    while (node != NULL) {
-        printf("%d -> ", node->value);
-        node = node->next;
-    }
-    printf("NULL\n");
-}
-
 void test_insert_elem_begin() {
 	List *list;
 	
