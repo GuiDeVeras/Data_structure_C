@@ -4,11 +4,11 @@
 #include "static_queue.h"
 
 void test_insert_elem() {
-	Queue* queue
+	Queue* queue;
 	
-	queue = create_queue
+	queue = create_queue();
 	
-	assert(queue_empty(queue) == 1)
+	assert(queue_empty(queue) == 1);
 	insert_elem(queue, 1);
 	assert(queue->value[0] == 1);
 	assert(size_queue(queue) == 1);
@@ -25,16 +25,16 @@ void test_insert_elem() {
 }
 
 void test_remove_elem() {
-	Queue* queue
+	Queue* queue;
 	
-	queue = create_queue
+	queue = create_queue();
 	
 	assert(remove_elem(queue) == 0);
 	
-	assert(queue_empty(queue) == 1)
+	assert(queue_empty(queue) == 1);
 	insert_elem(queue, 1);
 	remove_elem(queue);
-	assert(queue_empty(queue) == 1)
+	assert(queue_empty(queue) == 1);
 	assert(size_queue(queue) == 0);
 	
 	insert_elem(queue, 4);
