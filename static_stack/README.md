@@ -7,4 +7,4 @@
 
 	The purpose of this project is to learn the applications of static stack.
 	
-• Static stack: A type of "list" in which the successor of an element ocupy it next physical position (array use).
+• Static stack: A type of "stack" in which the successor of an element ocupy it next physical position (array use).
