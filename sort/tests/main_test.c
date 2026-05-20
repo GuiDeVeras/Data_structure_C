@@ -17,5 +17,7 @@ int main() {
 
 	test_heap_sort();
 	
+	test_shell_sort();
+	
 	return 0;
 }

@@ -99,3 +99,19 @@ void test_heap_sort() {
 	printf("test_heap_sort worked!\n");
 }
 
+void test_heap_sort() {
+	int arr[6];
+	int n = 6;
+	for (int i = 0; i < 6; i++) {
+		array[i] = (rand() % 100) + 1;
+	}
+    
+	shell_sort(arr, 6);
+
+	for (int i = 0; i < n - 1; i++) {
+        	assert(arr[i] <= arr[i + 1]);
+	}
+    
+	printf("test_shell_sort worked!\n");
+}
+

@@ -18,6 +18,8 @@ void heap_sort(int *array, int size);
 
 void create_heap(int *array, int i, int f);
 
+void shell_sort (int *V, int N);
+
 //Tests
 
 void test_bubble_sort();
@@ -31,3 +33,5 @@ void test_merge_sort();
 void test_quick_sort();
 
 void test_heap_sort();
+
+void test_shell_sort ();

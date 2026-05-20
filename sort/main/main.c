@@ -8,7 +8,7 @@ int main(){
 	int array[MAX], o = 1;
 		
 	while (o != 0) {
-		printf("1: Sort an array with randon numbers using bubble sort\n2: Sort an array with randon numbers using insertion sort\n3: Sort an array with randon numbers using selection sort\n4: Sort an array with randon numbers using merge sort\n5: Sort an array with randon numbers using quick sort\n6: Sort an array with randon numbers using heap sort\n0: Stop operations\n\nDecision choosen: ");
+		printf("1: Sort an array with randon numbers using bubble sort\n2: Sort an array with randon numbers using insertion sort\n3: Sort an array with randon numbers using selection sort\n4: Sort an array with randon numbers using merge sort\n5: Sort an array with randon numbers using quick sort\n6: Sort an array with randon numbers using heap sort\n7: Sort and array with randon numbers using shell sort\n0: Stop operations\n\nDecision choosen: ");
 		scanf("%d", &o);
 		switch (o) {
 			case 1:
@@ -83,6 +83,19 @@ int main(){
 					printf("%d ", array[i]);
 				}
 				heap_sort(array, MAX);
+				printf("\nArray: ");
+				for (int i = 0; i < MAX; i++) {
+					printf("%d ", array[i]);
+				}
+				printf("\n\n");
+				break;
+			case 7:
+				printf("Array: ");
+				for (int i = 0; i < MAX; i++) {
+					array[i] = (rand() % 100) + 1;
+					printf("%d ", array[i]);
+				}
+				shell_sort(array, MAX);
 				printf("\nArray: ");
 				for (int i = 0; i < MAX; i++) {
 					printf("%d ", array[i]);

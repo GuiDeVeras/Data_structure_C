@@ -161,3 +161,21 @@ void create_heap(int *array, int i, int f) {
 	}
 	array[i] = aux;
 }
+
+void shell_sort (int *V, int N) {
+	int i, j, h, aux;
+	h = 1;
+	while (h < N/3) h = 3 * h + 1;
+	while (h > 0) {
+		for (i = h; i < N; i++) {
+			aux = V[i];
+			j = 1;
+			while (j >= h && aux < V[j - h]) {
+				v[j] = V[j - h];
+				j = j - h;
+			}
+			V[j] = aux;
+		}
+		h = (h-1)/3;
+	}
+}
