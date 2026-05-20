@@ -1,3 +1,5 @@
+#define d 256
+
 typedef struct Hash hash;
 
 hash* create_hash (int table_size);
@@ -25,6 +27,8 @@ int double_hashing (int h1, int key, int i, int table_size);
 int insert_hash_collisionless (hash* hsh, int value);
 
 int search_hash_collisionless (hash* hsh, int value, int *aux);
+
+void Rabin_Karp (char *model, char *text);
 
 //Test
 

@@ -131,3 +131,34 @@ int search_hash_collisionless (hash* hsh, int value, int* aux) {
 	}
 	return 0;
 }
+
+void Rabin_Karp (char *model, char *text) {
+	int i, j;
+	
+	int M = strlen(model);
+	int N = strlen(text);
+	
+	int hash_m = 0;
+	int hash_t = 0;
+	
+	int h = 1;
+	int q = 101;
+	
+	for (i = 0; i < M - 1; i++) h = (h * d) % q;
+	for (i = 0; i < M; i++) {
+		hash_m = (d * hash_m + model[i]) % q;
+		hash_t = (d * hash_t + text[i]) % q; 
+	}
+	for (i = 0; i <= N - M; i++) {
+		if (hash_m == hash_t) {
+			for (j = 0; j < M; j++) {
+				if (text[i + j] != model[j]) break;
+			}
+			if (j == M) printf("Model found in position %d\n", i);
+		}
+		if (i < N - M) {
+			hash_t = (d * (hash_t - text[i] * h) + text[i + M]) % q;
+			if (hash_t < 0) hash_t = (hash_t + q);
+		}
+	}
+}

@@ -52,3 +52,7 @@
 • Double hashing: Try to spread using two hash functions (h1 + i * h2)
 			h1: used to calculate the element's inital position 
 			h2: used to calculate the displacement in relation with the initial position when a collision occurs
+			
+• Rabin-Karp algorithm: Calculates the model's hash and compare with the input's' substrings hash. If the hash's are the same, than compare the caracteres to confirm if it's a valid occureance. Uses the rolling hash technique. The new hash value is calculated rapidly removing the old value from the old hash and adding the new value
+	Advantages: Simple to implement, capable of searching multiples instances in one string and it's efficient and scalable, capable of sustaining longer strings
+	Disadvantages: High risk of hash collisions, leading to false positives and it's slower than other model search algorithms when there's many collisions.
