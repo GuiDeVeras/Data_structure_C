@@ -41,11 +41,10 @@ int main(){
 				break;
 			case 4:
 				for (begin_bag (b); !end_bag (b); next_bag (b)) {
-					int x;
 					get_item_bag (b, &x);
 					printf("%d ", x);
 				}
-				printf("\n\n0");
+				printf("\n\n");
 				break;
 			case 0:
 				free_bag(b);
